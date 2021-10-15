@@ -79,10 +79,8 @@ function generateWords() {
 	wrongcount = 0;
 	blankadj = "";
 	blanknoun = "";
-	secretadj = adjlist[Math.floor(Math.random()*adjlist.length)].toString().toUpperCase();
-	secretadj = secretadj.substring(0, secretadj.length - 1);
-	secretnoun = nounlist[Math.floor(Math.random()*nounlist.length)].toString().toUpperCase();
-	secretnoun = secretnoun.substring(0, secretnoun.length - 1);
+	secretadj = adjlist[Math.floor(Math.random()*adjlist.length)].toString().toUpperCase().trim();
+	secretnoun = nounlist[Math.floor(Math.random()*nounlist.length)].toString().toUpperCase().trim();
 	for(a = 0; a < secretadj.length; a++) {
 		if(secretadj.charAt(a) == "-") {
 			blankadj += " -";
