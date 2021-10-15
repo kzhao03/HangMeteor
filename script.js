@@ -80,7 +80,9 @@ function generateWords() {
 	blankadj = "";
 	blanknoun = "";
 	secretadj = adjlist[Math.floor(Math.random()*adjlist.length)].toString().toUpperCase();
+	secretadj = secretadj.substring(0, secretadj.length - 1);
 	secretnoun = nounlist[Math.floor(Math.random()*nounlist.length)].toString().toUpperCase();
+	secretnoun = secretnoun.substring(0, secretnoun.length - 1);
 	for(a = 0; a < secretadj.length; a++) {
 		if(secretadj.charAt(a) == "-") {
 			blankadj += " -";
