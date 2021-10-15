@@ -1,5 +1,5 @@
 //Define Variables and Arrays, set inital values for Stats
-var captions = ["See this screen, commander? It'll provide you live updates on the asteroid.", "Scientists have identified the trajectory!", "Asteroid has entered in range of our camera!", "Asteroid has entered zone 2.", "Asteroid has entered zone 3", "Asteroid has entered zone 4", "Last chance Commander! Zone 5!", "You did it Commander! The world is saved!", "...", "Nice job! We slowed the asteroid down with our gravity field but we still can't destroy it."]
+var captions = ["See this screen, commander? It'll provide you live updates on the asteroid.", "Scientists have identified the trajectory!", "Asteroid has entered in range of our camera!", "Asteroid has entered zone 2.", "Asteroid has entered zone 3", "Asteroid has entered zone 4", "Last chance Commander! Zone 5!", "You did it Commander! The world is saved!", "...", "Nice job! Our gravity field slowed down the asteroid!"]
 var images = ["url(images/space1.png)", "url(images/wrong1.gif)", "url(images/wrong2.gif)", "url(images/wrong3.gif)", "url(images/wrong4.gif)", "url(images/wrong5.gif)", "url(images/wrong6.gif)", "url(images/win.gif)", "url(images/lose.gif)"];
 var x, btn, myP, letter, t, element, secretadj, secretnoun, a, b, blankadj, blanknoun, resetletter, oldadj, oldnoun, wrongcount, adjlist, nounlist;
 var totalpoints = 0;
@@ -7,6 +7,8 @@ var totalgames = 0;
 var totalwon = 0;
 var highscore = 0;
 
+
+//creates lists from files
 var adjraw = new XMLHttpRequest();
 adjraw.open("GET", "adjectives.txt");
 adjraw.onload = function() {
@@ -21,9 +23,6 @@ nounraw.onload = function() {
 }
 nounraw.send();
 
-
-//var adjlist = ["BIG", "NORWEGIAN", "GREAT", "GRACEFUL", "CHEERFUL", "UNINTERESTING"];
-//var nounlist = ["PICTURE", "HUSBAND", "MONSTER", "DOLPHIN", "BUSINESS", "PRINCESS", "ELEPHANT", "TREASURE", "CHOCOLATE", "ADVENTURE", "CROCODILE", "WEDNESDAY", "VOLLEYBALL", "DEPRESSION", "TECHNOLOGY", "WATERMELON"];
 //Opens first drop down, creates buttons
 function openNav() {
 	createButtons();
@@ -80,13 +79,21 @@ function generateWords() {
 	wrongcount = 0;
 	blankadj = "";
 	blanknoun = "";
-	secretadj = adjlist[Math.floor(Math.random()*6)]
-	secretnoun = nounlist[Math.floor(Math.random()*16)]
-	for(a = 1; a <= secretadj.length; a++) {
-		blankadj += " _";
+	secretadj = adjlist[Math.floor(Math.random()*adjlist.length)].toString().toUpperCase();
+	secretnoun = nounlist[Math.floor(Math.random()*nounlist.length)].toString().toUpperCase();
+	for(a = 0; a < secretadj.length; a++) {
+		if(secretadj.charAt(a) == "-") {
+			blankadj += " -";
+		} else {
+			blankadj += " _";
+		}
 	}
-	for(a = 1; a <= secretnoun.length; a++) {
-		blanknoun += " _";
+	for(a = 0; a < secretnoun.length; a++) {
+		if(secretnoun.charAt(a) == "-") {
+			blanknoun += " -";
+		} else {
+			blanknoun += " _";
+		}
 	}
 	updateWords();
 }
