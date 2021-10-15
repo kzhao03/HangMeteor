@@ -3,76 +3,80 @@
 <html>
 	
 <head>
-<title>HangMeteor</title>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
-<link href="style.css" rel="stylesheet" type="text/css" />
+	<title>HangMeteor</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+	<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-<body onload="openNav()">
-<script src="script.js"></script>
 
-<!--Intro Drop down-->
-<div id="nav" class="overlay">
-<div class="overlay-content">
-<h1>HangMeteor</h1>
-<p>Enter your name, Commander:</p>
-<input type="text" id="name" maxlength="30"/><br /><br /><br />
-<button type="button" id="closebtn" onclick="closeNav()">Start Game</button>
-</div>
-</div>
-<!--About drop down-->
-<div id="about" class="aboverlay">
-<div class="about-content">
-<h1>Transmission from HQ</h1>
-<p>
-	"Commander <i id="com"></i>?"<br><br>
-	"We recieved a message from our scientists and, well, it isn't good.<br>
-	They have discovered that a huge asteroid is heading straight towards Earth."<br><br>
-	"Our laser blaster has potential to destroy it, but only you have the authorization to activate it.<br>
-	The activation of the laser is protected by a password, which we have in some book somewhere."<br><br>
-	"The problem is, we don't have the time to find the code. You'll just have to guess it.<br>
-	What I can tell you is that the password is an adjective followed by a noun."<br><br>
-	"Good luck Commander. Our lives depend on you."
-</p>
-<br /><br /><br />
-<button type="button" id="closebtn" onclick="closeAbout()">Understood!</button>
-</div>
-</div>
-<!--Win drop down-->
-<div id="winsplash" class="overlay">
-<div class="overlay-content">
-<h1>You Won!</h1>
-<p id="percentage"></p>
-<button type="button" id="closebtn" onclick="closeWin()">Continue</button>
-</div>
-</div>
-<!--Lose drop down-->
-<div id="losesplash" class="overlay">
-<div class="overlay-content">
-<h1>Game Over!</h1>
-<p id="loststats"></p>
-<button type="button" id="closebtn" onclick="closeLose()">Restart Game</button>
-</div>
-</div>
-<!--Contains blank words and image-->
-<div id="box">
-<div id="blank">
-<p id="blankadj"></p>
-<p id="blanknoun"></p>
-</div>
-<div id="image">
-</div>
-</div>
-<br />
-<!--Stats including lives, the caption, and points-->
-<p id="stats2">Guesses Left: <i id="lives"></i></p>
-<p id="stats3"><i id="caption"></i></p>
-<p id="stats2">Total Points: <i id="total">0</i></p>
-<p id="stats"><b>Letters Picked:</b> <i id="p1"></i></p>
-<center>
-<!--Where letters are-->
-<div id="letterback">
-<div id="letters"></div>
-</div>
-</center>
+<body onload="openNav()">
+	<script src="script.js"></script>
+
+	<!--Intro Drop down-->
+	<div id="nav" class="overlay">
+		<div class="overlay-content">
+			<h1>HangMeteor</h1>
+				<p>Enter your name, Commander:</p>
+				<input type="text" id="name" maxlength="30"/><br /><br /><br />
+				<button type="button" id="closebtn" onclick="closeNav()">Start Game</button>
+		</div>
+	</div>
+
+	<!--About drop down-->
+	<div id="about" class="aboverlay">
+		<div class="about-content">
+			<h1>Transmission from HQ</h1>
+			<p>
+				"Commander <i id="com"></i>?"<br><br>
+				"We recieved a message from our scientists and, well, it isn't good.<br>
+				They have discovered that a huge asteroid is heading straight towards Earth."<br><br>
+				"Our laser blaster has potential to destroy it, but only you have the authorization to activate it.<br>
+				The activation of the laser is protected by a password, which we have in some book somewhere."<br><br>
+				"The problem is, we don't have the time to find the code. You'll just have to guess it.<br>
+				What I can tell you is that the password is an adjective followed by a noun."<br><br>
+				"Good luck Commander. Our lives depend on you."
+			</p><br /><br /><br />
+			<button type="button" id="closebtn" onclick="closeAbout()">Understood!</button>
+		</div>
+	</div>
+
+	<!--Win drop down-->
+	<div id="winsplash" class="overlay">
+		<div class="overlay-content">
+			<h1>You Won!</h1>
+			<p id="percentage"></p>
+			<button type="button" id="closebtn" onclick="closeWin()">Continue</button>
+		</div>
+	</div>
+
+	<!--Lose drop down-->
+	<div id="losesplash" class="overlay">
+		<div class="overlay-content">
+			<h1>Game Over!</h1>
+			<p id="loststats"></p>
+			<button type="button" id="closebtn" onclick="closeLose()">Restart Game</button>
+		</div>
+	</div>
+
+	<!--Contains blank words and image-->
+	<div id="box">
+		<div id="blank">
+			<p id="blankadj"></p>
+			<p id="blanknoun"></p>
+		</div>
+		<div id="image"></div>
+	</div><br />
+
+	<!--Stats including lives, the caption, and points-->
+	<p id="stats2">Guesses Left: <i id="lives"></i></p>
+	<p id="stats3"><i id="caption"></i></p>
+	<p id="stats2">Total Points: <i id="total">0</i></p>
+	<p id="stats"><b>Letters Picked:</b> <i id="p1"></i></p>
+	
+	<center>
+	<!--Where letters are-->
+	<div id="letterback">
+		<div id="letters"></div>
+	</div>
+	</center>
 </body>
 </html>
