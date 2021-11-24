@@ -1,22 +1,22 @@
 //Define Variables and Arrays, set inital values for Stats
-var captions = ["See this screen, commander? It'll provide you live updates on the asteroid.", "Scientists have identified the trajectory!", "Asteroid has entered in range of our camera!", "Asteroid has entered zone 2.", "Asteroid has entered zone 3", "Asteroid has entered zone 4", "Last chance Commander! Zone 5!", "You did it Commander! The world is saved!", "...", "Nice job! Our gravity field slowed down the asteroid!"]
-var images = ["url(images/space1.png)", "url(images/wrong1.gif)", "url(images/wrong2.gif)", "url(images/wrong3.gif)", "url(images/wrong4.gif)", "url(images/wrong5.gif)", "url(images/wrong6.gif)", "url(images/win.gif)", "url(images/lose.gif)"];
-var x, btn, myP, letter, t, element, secretadj, secretnoun, a, b, blankadj, blanknoun, resetletter, oldadj, oldnoun, wrongcount, adjlist, nounlist;
-var totalpoints = 0;
-var totalgames = 0;
-var totalwon = 0;
-var highscore = 0;
+let captions = ["See this screen, commander? It'll provide you live updates on the asteroid.", "Scientists have identified the trajectory!", "Asteroid has entered in range of our camera!", "Asteroid has entered zone 2.", "Asteroid has entered zone 3", "Asteroid has entered zone 4", "Last chance Commander! Zone 5!", "You did it Commander! The world is saved!", "...", "Nice job! Our gravity field slowed down the asteroid!"]
+let images = ["url(images/space1.png)", "url(images/wrong1.gif)", "url(images/wrong2.gif)", "url(images/wrong3.gif)", "url(images/wrong4.gif)", "url(images/wrong5.gif)", "url(images/wrong6.gif)", "url(images/win.gif)", "url(images/lose.gif)"];
+let x, btn, myP, letter, t, element, secretadj, secretnoun, a, b, blankadj, blanknoun, resetletter, oldadj, oldnoun, wrongcount, adjlist, nounlist;
+let totalpoints = 0;
+let totalgames = 0;
+let totalwon = 0;
+let highscore = 0;
 
 
 //creates lists from files
-var adjraw = new XMLHttpRequest();
+let adjraw = new XMLHttpRequest();
 adjraw.open("GET", "adjectives.txt");
 adjraw.onload = function() {
 	adjlist = adjraw.responseText.split("\n");
 }
 adjraw.send();
 
-var nounraw = new XMLHttpRequest();
+let nounraw = new XMLHttpRequest();
 nounraw.open("GET", "nouns.txt");
 nounraw.onload = function() {
 	nounlist = nounraw.responseText.split("\n");
@@ -30,7 +30,7 @@ function openNav() {
 }
 //Takes name, closes drop down
 function closeNav() {
-	var name = document.getElementById('name').value;
+	let name = document.getElementById('name').value;
 	document.getElementById('com').innerHTML = name;
 	document.getElementById("nav").style.height = "0%";
 	setTimeout(openAbout, 750);
